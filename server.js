@@ -32,6 +32,19 @@ app.get('/', (req, res) => {
     });
 })
 
+//Selecting all data from my testData table to we can get it on the api
+app.get('/json', (req, res) => {
+    fetch("https://dummyjson.com/products/2")
+    .then(response => response.json())
+    .then(data => {
+      res.send(data)
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      res.status(500).json({ error: 'An error occurred' });
+    });
+})
+
 //Telling what port it is listening at
 app.listen(port, () => {
     console.log(`App listening on port ${port}`)
