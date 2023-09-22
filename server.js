@@ -34,7 +34,7 @@ app.get('/', (req, res) => {
 
 //Selecting all data from my testData table to we can get it on the api
 app.get('/json', (req, res) => {
-    fetch("https://dummyjson.com/products/2")
+    fetch("https://dummyjson.com/products/")
     .then(response => response.json())
     .then(data => {
       res.send(data)
